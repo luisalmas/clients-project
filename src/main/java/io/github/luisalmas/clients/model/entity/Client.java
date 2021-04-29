@@ -1,5 +1,6 @@
 package io.github.luisalmas.clients.model.entity;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 
 @Entity
 @Data
+@Builder
 public class Client {
 
     @Id
@@ -23,5 +25,10 @@ public class Client {
 
     @Column(name = "date_registered")
     private LocalDate dateRegistered;
+
+    @PrePersist
+    public void prePresist(){
+        setDateRegistered(LocalDate.now());
+    }
 
 }
