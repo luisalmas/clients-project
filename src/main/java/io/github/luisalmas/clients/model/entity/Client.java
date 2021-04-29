@@ -13,7 +13,7 @@ public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int clientsId;
+    private Integer clientsId;
 
     @Column(nullable = false, length = 150)
     private String name;
@@ -21,7 +21,7 @@ public class Client {
     @Column(nullable = false, length = 9)
     private String nif;
 
-    @Column
+    @Column(name = "date_registered")
     private LocalDate dateRegistered;
 
 }

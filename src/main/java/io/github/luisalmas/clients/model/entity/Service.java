@@ -11,13 +11,13 @@ public class Service {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int servicesId;
+    private Integer servicesId;
 
     @Column(nullable = false, length = 255)
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "clientsId")
+    @JoinColumn(name = "clients_id")
     private Client client;
 
     @Column
